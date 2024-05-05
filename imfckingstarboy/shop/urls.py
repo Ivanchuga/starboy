@@ -8,7 +8,7 @@ app_name="shop"
 
 urlpatterns = [
     path("", views.all_items, name="all_items"),
-    path('<int:book_id>/', views.single_quote, name="single_book"),
+    path('<int:book_id>', views.single_book, name="single_book"),
 
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

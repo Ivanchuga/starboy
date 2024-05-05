@@ -1,20 +1,36 @@
+{% extends "./base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop</title>
 </head>
+{% block content %}
 <body>
     <h1>Shop</h1>
-    <ul>
+    <div class="row">
         {% for book in books %}
-            <li><a href="{{book.id}}"><img src="{{book.images.url}}">
-            <a href="{{book.id}}">{{ book.title }}</li></a></li>
+    <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+            <a href="{{book.id}}">
+          <img class="card-img-top" src="{{book.images}}" alt="Book cover">
+          <div class="card-body">
+            <h5 class="card-title">{{ book.title }}</h5>
+          </a>
 
-        {% endfor %}
-    </ul>
-    <img src="{% static '/media/disidaprodje.jpg'%}">
-</body>
-</html>
+            <p class="card-text">{{ book.description|truncatewords:20 }}</p>
+          
+
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+
+
+{% endblock %}
+
+

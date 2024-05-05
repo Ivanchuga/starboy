@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "./base.html" %}
+{% load static %}
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quotes</title>
 </head>
+{% block content %}
 <body>
     <h1>Quotes</h1>
     <ul>
@@ -13,4 +16,6 @@
         {% endfor %}
     </ul>
 </body>
-</html>
+
+
+{% endblock %}

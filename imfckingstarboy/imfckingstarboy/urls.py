@@ -19,11 +19,14 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 from django.conf.urls.static import static
 from django.conf import settings
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
     path('quotes/', include('quotes.urls')),
     path('shop/', include("shop.urls")),
+    path('basket/', include('basket.urls', namespace='basket')),
     path('test/', TemplateView.as_view(template_name="test.html"))#, name="test_html"),
 ]
 if settings.DEBUG:

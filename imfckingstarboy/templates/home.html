@@ -1,0 +1,43 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}BookStore{% endblock %}
+{% block content %}
+<main>
+  <div class="container">
+    
+
+    <div class="container">
+      <div class="row">
+        <div class="album py-5">
+          <div class="pb-3">
+            <h1 class="h3">Popular</h1>
+            
+          </div>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+            {% for product in books %}
+            <div class="col">
+              <div class="card border-0">
+                <img class="img-fluid" alt="Responsive image" src="/static/{{product.images}}">
+                <div class="card-body px-0">
+                  <h5 class="card-title book-title">
+                    <a class="text-dark text-decoration-none"
+                      href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                  </h5>
+                  
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      {% for quote in quotes %}
+        {{ quote }} <br>
+      {% endfor %}
+
+      <!--   about   -->
+      {% include "about_home.html" %}
+    </div>
+</main>
+{% endblock %}

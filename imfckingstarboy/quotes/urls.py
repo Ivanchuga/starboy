@@ -8,7 +8,7 @@ app_name= "quotes"
 
 urlpatterns = [
     path('', views.all_quotes, name="all_quotes"),
-    path('<int:quote_id>/', views.single_quote, name="single_quote"),
+    path('<int:quote_id>', views.single_quote, name="single_quote"),
 
 ]
 
