@@ -15,6 +15,22 @@ class Basket():
         if 'skey' not in request.session:
             basket = self.session['skey'] = {}
         self.basket = basket
+    
+    def basket_content(self):
+        basket = self.basket.copy()
+        total_price = 0
+        result = ""
+
+        for item_id, item_info in basket.items():
+            book = Book.objects.filter(id=item_id)[0]
+            price = item_info.get('price')
+            qty = item_info.get('qty')
+            item_total_price = float(price) * int(qty)
+            total_price += item_total_price
+            result += f"{book} (x{qty}) = {item_total_price}\n"
+
+        result += f"Ukupno: {total_price}"
+        return result
 
     def add(self, product, qty):
         """
@@ -74,6 +90,7 @@ class Basket():
             del self.basket[product_id]
             print(product_id)
             self.save()
+
 
     def save(self):
         self.session.modified = True

@@ -24,10 +24,10 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('order_confirmation/', views.order_confirmation, name="order_confirmation"),
     path('quotes/', include('quotes.urls')),
     path('shop/', include("shop.urls")),
     path('basket/', include('basket.urls', namespace='basket')),
-    path('test/', TemplateView.as_view(template_name="test.html"))#, name="test_html"),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_ROOT, document_root=settings.MEDIA_ROOT)

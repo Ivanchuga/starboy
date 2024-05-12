@@ -7,4 +7,5 @@ def home(request):
     books = Book.objects.all()
     return render(request, 'home.html',{'quotes':quotes, 'books':books})
 
-
+def order_confirmation(request):
+    return render(request, 'order_confirmation.html')
