@@ -14,5 +14,7 @@ def single_book(request, book_id):
 
     return render(request, 'single_book.html', {'book': book})
 
-def get_absolute_url(self):
-        return reverse('store:product_detail', args=[self.slug])
+#def get_absolute_url(self):
+#        #return reverse('store:product_detail', args=[self.slug])
+#        print("GET ABSOLUTE URL")
+#        return reverse('single_book', args=[str(self.id)])

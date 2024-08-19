@@ -1,6 +1,7 @@
 body{
-    background-image: url('handmadepaper.png');
+    /*background-image: url('handmadepaper.png');
     background-repeat: repeat;
+    */
 }
 /* Bootstrap Over-ride */
 @media (min-width: 1000px){
@@ -10,7 +11,7 @@ body{
 }
 @media (max-width: 1200px){
     .container{
-        max-width: 100%;
+        max-width: 1000px;
         padding:0 24px;
     }
 }
@@ -27,6 +28,128 @@ body{
     background-color: #E4F1FF;
 }
 
+body{
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+main{
+    margin-top: 90px;
+    flex: 1;
+    min-height: calc(100vh - 243px);
+    
+}
+.home-page{
+    margin-top: 0;
+}
+
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.0);
+    transition: background-color 0.5s ease-in-out;
+  }
+  .navbar-container{
+    width: 100%;
+    max-width: 1000px;
+    margin:0 auto;
+  }
+  .navbar.scrolled {
+    background-color: rgba(255, 255, 255);
+    /*
+    background-image: url('handmadepaper.png');
+    background-repeat: repeat; */
+    box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.5);
+  }
+  .navbar-brand-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .carousel-inner{
+    background: gray;
+  }
+  .carousel-item img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+  }
+  .fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+    transition:  0.3s ease-in-out;
+  }
+  .fullscreen-menu ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+  }
+  .fullscreen-menu ul li {
+    margin: 20px 0;
+  }
+  .fullscreen-menu ul li a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+  }
+  .navbar-toggler{
+    display: block !important;
+  }
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+  }
+  .slider-container{
+    padding: 0 !important;
+    max-width: 100%;
+  }
+
+  .px-0{
+    padding-left: 20px !important;
+  }
+
+  .single_book img{
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .single_book .title{
+    margin-bottom: 30px;
+  }
+  .single_book .ordering{
+    text-align: right;
+    margin-bottom: 40px;
+  }
+  .single_book .ordering .select{
+    width: 35px;
+    border: none;
+    height: 40px;
+    margin-left: 10px;
+  }
+  .single_book .ordering .select:focus-visible{
+    border: none;
+    outline: 0;
+  }
+
+  .footer{
+    max-width: 100%;
+    background: #601B24;
+    color: white;
+  }
 
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');

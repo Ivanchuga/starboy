@@ -26,7 +26,7 @@
             </div>
             <div class="col-md-9 ps-md-3">
               <div class="card-body p-1">
-                <a class="text-decoration-none text-reset" href="{{item.product.get_absolute_url}}">
+                <a class="text-decoration-none text-reset" href="{{product.get_absolute_url}}">
                   <h5 class="card-text pb-3 book-title">{{product.title}}</h5>
                 </a>
                     <label for="select">Kol.</label>
@@ -36,6 +36,7 @@
                       <option value="">2</option>
                       <option value="">3</option>
                       <option value="">4</option>
+                      <option value="">5</option>
                     </select>
                 <a type="button" id="update-button" data-index="{{product.id}}" class="update-button text-decoration-none small ps-3">Update</a>
                 <a type="button" id="delete-button" data-index="{{product.id}}" class="delete-button text-decoration-none small">Obriši</a>
@@ -92,13 +93,16 @@
             subtotal = 0
           }
           else{
-            total = (parseFloat(json.subtotal) + 11.50).toFixed(2);
+            total = (parseFloat(json.subtotal)).toFixed(2);
             subtotal = json.subtotal
           }
+        console.log("PROSLOOOOOOO")
+        console.log(subtotal)
+        console.log(total)
 
-        document.getElementById("subtotal").innerHTML = subtotal;
+        //document.getElementById("subtotal").innerHTML = json.subtotal;
         document.getElementById("basket-qty").innerHTML = json.qty;
-        document.getElementById("total").innerHTML = total;
+        document.getElementById("total").innerText = total;
       },
       error: function (xhr, errmsg, err) {},
     });
@@ -119,10 +123,10 @@
       },
       success: function (json) {
 
-        total = (parseFloat(json.subtotal) + 11.50).toFixed(2);
+        total = (parseFloat(json.subtotal)).toFixed(2);
         document.getElementById("basket-qty").innerHTML = json.qty;
-        document.getElementById("subtotal").innerHTML = json.subtotal;
-        document.getElementById("total").innerHTML = total;
+        //document.getElementById("subtotal").innerHTML = json.subtotal;
+        document.getElementById("total").innerText = total;
       },
       error: function (xhr, errmsg, err) {},
     });
