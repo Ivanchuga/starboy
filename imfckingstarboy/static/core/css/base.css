@@ -46,9 +46,13 @@ main{
     margin-top: 0;
 }
 
+.home-page .book-title{
+  padding-top: 20px;
+}
+
 
 .navbar {
-    background-color: rgba(255, 255, 255, 0.0);
+    background-color: rgba(255, 255, 255, 0.2);
     transition: background-color 0.5s ease-in-out;
   }
   .navbar-container{
@@ -75,6 +79,35 @@ main{
     width: 100%;
     height: 600px;
     object-fit: cover;
+  }
+  .home-quotes{
+    background: url("https://as1.ftcdn.net/v2/jpg/02/99/95/46/1000_F_299954637_ja156sG2ompHPexIDrif66y9NJeupVxO.jpg");
+    background-repeat: no-repeat;
+    min-height: 400px;
+    padding-top: 25px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+    backdrop-filter: blur(10px);
+  }
+  .home-quotes .col{
+    
+  }
+  .home-quotes .quote_container{
+    box-shadow: 0px 29px 38px -15px rgba(0,0,0,0.7);
+    background: rgba(255,255,255, 0.95);
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 17px;
+    width: 100%;
+    height: 100%;
+  }
+  .row .py-5{
+    display: box;
+    width: 100%;
   }
   .fullscreen-menu {
     position: fixed;

@@ -1,5 +1,12 @@
-<form method="post" action='{% url "order_confirmation" %}'>
+{% extends "./base.html" %} {% load static %} {% block title %}Porucbina{%endblock %} 
+
+{% block content %}
+<main class="non-home-page checkout-page container">
+<form method="POST" action='{% url "basket:checkout" %}'> 
+<!--<form method="POST" action='{% url "home" %}'>-->
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Potvrdi porudžbinu</button>
 </form>
+</main>
+{% endblock %}

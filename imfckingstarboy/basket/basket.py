@@ -91,6 +91,11 @@ class Basket():
             print(product_id)
             self.save()
 
+    def empty_basket(self):
+        self.basket.clear()
+        self.save()
+
+
 
     def save(self):
         self.session.modified = True

@@ -1,6 +1,6 @@
 {% extends "./base.html" %}
 {% load static %}
-{% block title %}BookStore{% endblock %}
+{% block title %}ImFckingStarboy{% endblock %}
 {% block content %}
 <main class="home-page">
   <div class="container slider-container">
@@ -13,19 +13,35 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://via.placeholder.com/1920x600.png?text=Slide+2" class="d-block w-100" alt="Slide 1">
+        <img src="static/media/old_car.jpg" class="d-block w-100" alt="Slide 1">
       </div>
       <div class="carousel-item">
-        <img src="https://via.placeholder.com/1920x600.png?text=Slide+2" class="d-block w-100" alt="Slide 2">
+        <img src="static/media/car_in_room.png" class="d-block w-100" alt="Slide 2">
       </div>
       <div class="carousel-item">
         <img src="https://via.placeholder.com/1920x600.png?text=Slide+2" class="d-block w-100" alt="Slide 3">
       </div>
     </div>
   </div>
+  </div>
 
+    <div class="whole_page">
     <div class="container">
-      <div class="row">
+      
+      {% if messages %}
+      <div>
+        {% for message in messages %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+      <!-- Books    -->
+    <div class="home-books">
+    <div class="container ">
+      <div class="row ">
         <div class="album py-5">
           <div class="pb-3">
             <h1 class="h3">Knjige</h1>
@@ -33,29 +49,53 @@
           </div>
           <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 g-3">
             {% for product in books %}
-            <div class="col .">
+            <div class="col ">
               <div class="card border-0">
                 <a class="text-dark text-decoration-none" href="/shop/{{ product.id }}">
-                <img class="img-fluid" alt="Responsive image" src="/static/{{product.images}}">
-                <div class="card-body px-0">
+                <img class="img-fluid" alt="Book image" src="/static/{{product.images}}">
+
                   <h5 class="card-title book-title">
                     {{ product.title }}</a>
                   </h5>
                   
-                </div>
+
               </div>
             </div>
             {% endfor %}
           </div>
         </div>
       </div>
-
-      {% for quote in quotes %}
-        {{ quote }} <br>
-      {% endfor %}
-
-      <!--   about   -->
-      {% include "about_home.html" %}
     </div>
+  </div>
+
+      <!-- /Books 
+            Quotes    -->
+    <div class="home-quotes">
+    <div class="container ">
+      <div class="row ">
+        <div class="album py-5">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 g-3">
+          {% for quote in quotes %}
+            <div class="col">
+              <div class="quote_container">
+            {{ quote|linebreaks }}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+      <!--   about   -->
+    <div class="home-about">
+    <div class="container ">
+      <div class="row ">
+      
+      {% include "about_home.html" %}
+      </div>
+    </div>
+  </div>
+</div>
 </main>
 {% endblock %}

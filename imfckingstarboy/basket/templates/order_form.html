@@ -1,5 +1,10 @@
+{% extends "./base.html" %} {% load static %} {% block title %}Potvrda{% endblock %} 
+
+{% block content %}
+<main class="non-home-page checkout-page container"
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Potrvrdi porudžbinu</button>
+    <button type="submit">Potrvrdi porudžbasdasdsadinu</button>
 </form>
+{% endblock %}

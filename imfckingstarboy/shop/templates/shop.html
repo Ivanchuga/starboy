@@ -1,15 +1,10 @@
 {% extends "./base.html" %}
 {% load static %}
-
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
-</head>
+{% block title %}Shop {% endblock %}
 {% block content %}
+<main class="non-home-page shop-page container">
 <body>
-    <h1>Shop</h1>
+    <h1 class="title">Shop</h1>
     <div class="row">
         {% for book in books %}
     <div class="col-md-4">

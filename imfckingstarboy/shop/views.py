@@ -11,7 +11,6 @@ def all_items(request):
 
 def single_book(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
-
     return render(request, 'single_book.html', {'book': book})
 
 #def get_absolute_url(self):

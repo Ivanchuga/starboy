@@ -16,4 +16,9 @@ class Order(models.Model):
     city = models.CharField(max_length=30)
     post_code = models.CharField(max_length=10)
     created = models.DateTimeField(auto_now_add=True)
+
+    def formatted_order_date(self):
+        return self.created.strftime("%d.%m.%Y. - %H:%M") 
     
+    def __str__(self):
+        return f"Order {self.full_name}, {self.city}, {self.formatted_order_date()}, cena: {self.price}"

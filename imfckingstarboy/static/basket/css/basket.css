@@ -6,14 +6,15 @@
     border-radius: 50%;
     text-align: center;
     font-size: 11px;
-    height: 15px;
+    height: 14px;
     width: 14px;
     position: absolute;
     box-sizing: content-box;
-    font-weight: 600;
+    
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; 
+    font-weight: 600; */
     top: 1px;
     right: 10px;
 }
@@ -21,9 +22,13 @@
 .basket-btn{
     position: relative;
 }
+.basket-btn svg, .basket-btn span{
+    color: black;
+}
 
 .basket-btn:hover, .basket-btn:focus, .basket-btn:active, .basket-btn.active{
     color:#d42114;
     transition-duration: 0.4s;
     background-color: #fff;
 }
+

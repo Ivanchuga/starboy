@@ -10,7 +10,7 @@ def all_quotes(request):
 
 def latest_quotes(request):
     quotes = Quote.objects.all().order_by('-created_at')[:3]
-    return render(request, 'home.html', {'latest_quotes': quotes})
+    return render(request, 'imfckingstarboy:home.html', {'latest_quotes': quotes})
 
 def single_quote(request, quote_id):
     quote = get_object_or_404(Quote, pk=quote_id)
